@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Ekonomiczny</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>Quiz Ekonomiczny</h1>
+            <p>Test jednokrotnego wyboru - 600 pytań</p>
+            
+            <div class="quiz-settings">
+                <div class="setting">
+                    <label for="questions-count">Liczba pytań:</label>
+                    <select id="questions-count">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="all">Wszystkie (600)</option>
+                    </select>
+                </div>
+                
+                <div class="setting">
+                    <label for="question-mode">Tryb pytań:</label>
+                    <select id="question-mode">
+                        <option value="all">Wszystkie pytania</option>
+                        <option value="review">Tylko pytania do powtórki</option>
+                        <option value="mixed">Mieszane (nowe + powtórki)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="progress-info">
+                <p>Twój postęp: <span id="progress-stats">0/600 pytań ukończonych</span></p>
+                <p>Pytania do powtórki: <span id="review-count">0</span></p>
+            </div>
+            
+            <div class="start-buttons">
+                <button id="start-btn">Rozpocznij Quiz</button>
+                <button id="continue-btn" disabled>Kontynuuj ostatnią sesję</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="question-number">Pytanie 1/600</span>
+                    <span id="score">Punkty: 0</span>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            
+            <div id="question-container">
+                <h2 id="question">Treść pytania</h2>
+                <div id="answer-buttons" class="btn-grid">
+                    <!-- Przyciski odpowiedzi będą generowane dynamicznie przez JavaScript -->
+                </div>
+            </div>
+            
+            <div class="quiz-footer">
+                <button id="next-btn" class="control-btn" disabled>Następne pytanie</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen hidden">
+            <h1>Wyniki quizu</h1>
+            <p>Twój wynik: <span id="final-score">0</span></p>
+            <div id="results-details">
+                <!-- Szczegóły wyników będą generowane dynamicznie -->
+            </div>
+            <button id="restart-btn">Powrót do menu</button>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
